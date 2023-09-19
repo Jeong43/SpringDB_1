@@ -49,6 +49,15 @@ class ConnectionTest {
   private void useDataSource(DataSource dataSource) throws SQLException {
     Connection conn1 = dataSource.getConnection();
     Connection conn2 = dataSource.getConnection();
+    Connection conn3 = dataSource.getConnection();
+    Connection conn4 = dataSource.getConnection();
+    Connection conn5 = dataSource.getConnection();
+    Connection conn6 = dataSource.getConnection();
+    Connection conn7 = dataSource.getConnection();
+    Connection conn8 = dataSource.getConnection();
+    Connection conn9 = dataSource.getConnection();
+    Connection conn10 = dataSource.getConnection();
+    Connection conn11 = dataSource.getConnection();
 
     log.info("Connection={}, class={}", conn1, conn1.getClass());
     log.info("Connection={}, class={}", conn2, conn2.getClass());
