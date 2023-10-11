@@ -16,6 +16,15 @@ class UncheckedAppTest {
         .isInstanceOf(Exception.class);
   }
 
+  @Test
+  void printEx() {
+    Controller controller = new Controller();
+    try {
+      controller.request();
+    } catch (Exception e) {
+      log.info("ex", e);
+    }
+  }
   static class Controller {
 
     Service service = new Service();
@@ -53,7 +62,7 @@ class UncheckedAppTest {
       try {
         runSQL();
       } catch (SQLException e) {
-        throw new RuntimeSQLException(e);
+        throw new RuntimeSQLException();
       }
     }
 
@@ -74,6 +83,8 @@ class UncheckedAppTest {
 
     public RuntimeSQLException(Throwable cause) {
       super(cause);
+    }
+    public RuntimeSQLException() {
     }
   }
 
