@@ -2,7 +2,6 @@ package hello.jdbc.exception.basic;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import hello.jdbc.exception.basic.CheckedTest.MyCheckedException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +17,7 @@ class UncheckedTest {
   @Test
   void checked_throw() {
     Service service = new Service();
-    assertThatThrownBy(() -> service.callThrow())
+    assertThatThrownBy(service::callThrow)
         .isInstanceOf(MyUncheckedException.class);
   }
 
@@ -52,8 +51,7 @@ class UncheckedTest {
     }
 
     /**
-     * 예외를 잡지 않아도 된다. 자연스럽게 상위로 넘어간다.
-     * 체크 예외와 다르게 throws 예외 선언을 하지 않아도 된다.
+     * 예외를 잡지 않아도 된다. 자연스럽게 상위로 넘어간다. 체크 예외와 다르게 throws 예외 선언을 하지 않아도 된다.
      */
     public void callThrow() {
       repository.call();
