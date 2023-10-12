@@ -20,7 +20,7 @@ import org.springframework.jdbc.support.JdbcUtils;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class MemberRepositoryV3 {
+public class MemberRepositoryV3 implements MemberRepositoryEx {
 
   private final DataSource dataSource;
 
